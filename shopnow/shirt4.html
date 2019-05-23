@@ -19,7 +19,22 @@
           'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-M2NNG24');</script>
   <!-- End Google Tag Manager -->
-
+  <script>
+    // Measures product impressions and also tracks a standard
+    // pageview for the tag configuration.
+    // Product impressions are sent by pushing an impressions object
+    // containing one or more impressionFieldObjects.
+    dataLayer.push({
+      'ecommerce': {
+        'currencyCode': 'IDR',                       // Local currency is optional.
+        'impressions': [
+          {
+            'name': 'Blue Short',
+            'price': '100.000'
+          }]
+      }
+    });
+  </script>
 
   <script src='js/jquery-3.4.1.min.js' type="text/javascript"></script>
   <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
