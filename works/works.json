@@ -1,0 +1,37 @@
+[
+  {
+    "code": "invasi",
+    "img": "invasi.png",
+    "featured": true,
+    "title": "Urban Inventory Management",
+    "description": "Inventory management system untuk PT. Urban Sintesa International (CodeIgniter)."
+  },
+  {
+    "code": "aikomter",
+    "img": "aikomter.png",
+    "featured": true,
+    "title": "Website of AIKOM Ternate",
+    "description": "Website yang dibuat untuk Akademi Ilmu Komputer Ternate (CodeIgniter)."
+  },
+  {
+    "code": "simitra",
+    "img": "simitra.png",
+    "featured": true,
+    "title": "Sistem Informasi Mitra PTBA",
+    "description": "Sistem informasi kemitraan untuk PT. Bukit Asam, Tbk, Unit Pelabuhan Tarahan, Lampung."
+  },
+  {
+    "code": "goa1",
+    "img": "goa1.jpg",
+    "featured": false,
+    "title": "Goa 1 - The Game (Unity 3D)",
+    "description": "A game developed to advertise a historical site of a village in Bantul, Yogyakarta."
+  },
+  {
+    "code": "shopnow",
+    "img": "shopnow.png",
+    "featured": false,
+    "title": "ShopNow - Implemetation of GA and GTM",
+    "description": "This project is developed to implement Google Analytics and Google Tag Manager in a web."
+  }
+]

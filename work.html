@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Oleh: Minhajuddin Kasman AR -->
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Minhajuddin Kasman AR</title>
+  <title>Project</title>
   <script src='assets/js/jquery-3.4.1.min.js' type="text/javascript"></script>
   <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="assets/css/custom.css" rel="stylesheet" type="text/css">
@@ -18,6 +16,18 @@
   <script src='assets/vendor/jquery-confirm/jquery-confirm.min.js' type="text/javascript"></script>
 
   <script src='didinkha.js' type="text/javascript"></script>
+
+  <script>
+    let searchParams = new URLSearchParams(window.location.search);
+    if (searchParams.has('code')) {
+      let param = searchParams.get('code');
+      renderWork(param);
+    }
+    else {
+      window.location.replace('index.html');
+    }
+  </script>
+
 </head>
 
 <body>
@@ -25,41 +35,11 @@
     <h1 class='mb-0 mt-5 '>Minha;</h1>
     <p>Pekerja Lepas - Programmer - IT Enthusiast</p>
     <hr />
-    <h3>Featured Projects</h3>
+    <h3><a href="index.html" class='mr-4 text-danger'>← Back</a><span id="title"></span></h3>
     <hr>
-    <div class="row" id="works">
-    </div>
-
-    <hr class='mt-4' />
-    <div class="row">
-      <div class="col-md-8 mb-5">
-        <h3 class='mb-3'>More Projects</h3>
-        <ul class="list-group list-group-flush" id="projects">
-        </ul>
-      </div>
-      <div class="col-md-4 mb-5">
-        <h3>Informasi Kontak</h3>
-        <hr>
-        <address>
-          <strong>Minhajuddin Kasman AR</strong>
-          <br>Jl. Bola RT.14 RW.5, Kel. Toboleu
-          <br>Kec. Ternate Utara, Kota Ternate
-          <br />Maluku Utara 97726
-          <br>
-        </address>
-        <address>
-          <abbr title="Phone">P:</abbr>
-          (+62) 822-2673-2225
-          <br>
-          <abbr title="Email">E:</abbr>
-          <a class="text-danger" href="mailto:didinkha@gmail.com">didinkha@gmail.com</a>
-        </address>
-      </div>
-
-
-    </div>
+    <div id="img" class='mb-4 text-center'></div>
+    <div id="content" class='text-justify'></div>
   </div>
-
   <!-- Footer -->
   <footer class="py-3 bg-dark mt-5">
     <div class="container">
@@ -67,7 +47,6 @@
     </div>
     <!-- /.container -->
   </footer>
-
 </body>
 
 </html>
