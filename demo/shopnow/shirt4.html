@@ -24,14 +24,18 @@
     // pageview for the tag configuration.
     // Product impressions are sent by pushing an impressions object
     // containing one or more impressionFieldObjects.
+    var pageType = "product";
     dataLayer.push({
       'ecommerce': {
         'currencyCode': 'IDR',                       // Local currency is optional.
-        'impressions': [
-          {
-            'name': 'Blue Short',
-            'price': '100.000'
-          }]
+        'impressions': [{
+          'name': 'Blue Short',       // Name or ID is required.
+          'id': 'P004',
+          'price': '100.000',
+          'brand': 'Google',
+          'category': 'Apparel',
+          'variant': 'Blue'
+        }]
       }
     });
   </script>
