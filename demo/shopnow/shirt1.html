@@ -28,11 +28,14 @@
     dataLayer.push({
       'ecommerce': {
         'currencyCode': 'IDR',                       // Local currency is optional.
-        'impressions': [
-          {
-            'name': 'Blue Shirt',
-            'price': '150.000'
-          }]
+        'impressions': [{
+          'name': 'Blue Shirt',       // Name or ID is required.
+          'id': 'P001',
+          'price': '150.000',
+          'brand': 'Google',
+          'category': 'Apparel',
+          'variant': 'Blue'
+        }]
       },
       'event': 'productImpressions', //we are using an event to send the impression data
     });
