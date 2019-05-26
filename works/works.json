@@ -25,13 +25,13 @@
     "img": "goa1.jpg",
     "featured": false,
     "title": "Goa 1 - The Game (Unity 3D)",
-    "description": "Sebuah game yang dibangun untuk mempromosikan salah satu situs wisata bersejarah di Bantul, Yogyakarta (2017)"
+    "description": "Sebuah game yang dibangun untuk mempromosikan salah satu situs wisata bersejarah di Yogyakarta (2017)"
   },
   {
     "code": "shopnow",
     "img": "shopnow.png",
     "featured": false,
     "title": "ShopNow - Implemetation of GA and GTM",
-    "description": "Implementasi sederhana Google Analytics dan Google Tag Manager pada sebuah website eCommerce.<br/><a href='https://didinkha.github.io/demo/shopnow'>Kunjungi Website</a>"
+    "description": "Implementasi sederhana Google Analytics dan Google Tag Manager pada sebuah website eCommerce.<br/><a href='https://didinkha.github.io/demo/shopnow' target='_blank' class='text-danger'>Kunjungi Website</a>"
   }
 ]
