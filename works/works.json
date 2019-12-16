@@ -1,5 +1,19 @@
 [
   {
+    "code": "rpm",
+    "img": "rpm.png",
+    "featured": true,
+    "title": "Rekrutmen Pengajar Muda",
+    "description": "Sistem rekrutmen relawan Pengajar Muda Yayasan Indonesia Mengajar (CodeIgniter)."
+  },
+  {
+    "code": "webim",
+    "img": "webim.png",
+    "featured": true,
+    "title": "Website Indonesia Mengajar",
+    "description": "Website Yayasan Gerakan Indonesia Mengajar (CodeIgniter)."
+  },
+  {
     "code": "invasi",
     "img": "invasi.png",
     "featured": true,
@@ -10,7 +24,7 @@
     "code": "aikomter",
     "img": "aikomter.PNG",
     "featured": true,
-    "title": "Website of AIKOM Ternate",
+    "title": "Website AIKOM Ternate",
     "description": "Website yang dibuat untuk Akademi Ilmu Komputer Ternate (CodeIgniter)."
   },
   {

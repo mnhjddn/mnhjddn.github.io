@@ -5,7 +5,7 @@ $(document).ready(function () {
     $.each(data, function (key, value) {
       if (value.featured) {
         var card_html = `<div class="col-md-4">
-          <div class="card shadow border-0">
+          <div class="card shadow border-0 mb-4">
             <img src="works/img/` + value.img + `" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title ">`+ value.title + `</h5>
