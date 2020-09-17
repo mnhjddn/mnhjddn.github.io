@@ -7,10 +7,10 @@ $(document).ready(function () {
         var card_html = `<div class="col-md-4">
           <div class="card shadow border-0 mb-4">
             <img src="works/img/${value.img}" class="card-img-top" alt="Minhajuddin Kasman AR">
-              <div class="card-body">
+              <div class="card-body text-center">
                 <h5 class="card-title ">${value.title}</h5>
                 <p class="card-text">${value.description}</p>
-                <div class="mt-4 mb-3 text-center">
+                <div class="mt-4 mb-3">
                   <a href="work.html?code=${value.code}" class="btn-primary-azmi rounded-pill">View Details</a>
                 </div>
                 </div>
