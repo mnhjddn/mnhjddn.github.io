@@ -6,12 +6,14 @@ $(document).ready(function () {
       if (value.featured) {
         var card_html = `<div class="col-md-4">
           <div class="card shadow border-0 mb-4">
-            <img src="works/img/` + value.img + `" class="card-img-top" alt="...">
+            <img src="works/img/${value.img}" class="card-img-top" alt="Minhajuddin Kasman AR">
               <div class="card-body">
-                <h5 class="card-title ">`+ value.title + `</h5>
-                <p class="card-text">`+ value.description + `</p>
-                <a href="work.html?code=`+ value.code + `" class="btn btn-danger">View Details</a>
-              </div>
+                <h5 class="card-title ">${value.title}</h5>
+                <p class="card-text">${value.description}</p>
+                <div class="mt-4 mb-3 text-center">
+                  <a href="work.html?code=${value.code}" class="btn-primary-azmi rounded-pill">View Details</a>
+                </div>
+                </div>
             </div>
           </div>`;
         $('#works').append(card_html);
