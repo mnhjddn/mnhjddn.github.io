@@ -158,7 +158,7 @@ class MnhBuilder {
 
                 if (mnhPageStructure[index].cols[indexI].content[indexJ].startsWith('<div data-type="img"')) {
                   // #region Edit image
-                  let _toBeEdited = new DOMParser().parseFromString(mnhPageStructure[index].cols[indexI].content[indexJ], "text/xml");
+                  let _toBeEdited = new DOMParser().parseFromString(mnhPageStructure[index].cols[indexI].content[indexJ], "text/html");
                   let addContent = contentEditor;
                   addContent.innerHTML = `
                     <div style="max-width:679px; width:100%" class="p-3 p-md-4 bg-white shadow rounded-lg">
