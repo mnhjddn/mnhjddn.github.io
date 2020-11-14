@@ -1,5 +1,12 @@
 [
   {
+    "code": "etam",
+    "img": "etam.png",
+    "featured": true,
+    "title": "Jurnal Etam",
+    "description": "Aplikasi pencatatan transaksi untuk perusahaan kelapa sawit PT. Etam Anugerah Ilahi."
+  },
+  {
     "code": "layout-builder",
     "img": "layout-builder.png",
     "featured": true,
