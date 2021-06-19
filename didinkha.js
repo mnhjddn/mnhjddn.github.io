@@ -11,7 +11,7 @@ $(document).ready(function () {
                 <h5 class="card-title ">${value.title}</h5>
                 <p class="card-text">${value.description}</p>
                 <div class="mt-4 mb-3">
-                  <a href="work.html?code=${value.code}" class="btn-primary-azmi rounded-pill">View Details</a>
+                  <a href="showcase.html#${value.code}" class="btn-primary-azmi rounded-pill">View Details</a>
                 </div>
                 </div>
             </div>

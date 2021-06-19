@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-178259013-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-178259013-1');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Project</title>
+    <script src='assets/js/jquery-3.4.1.min.js' type="text/javascript"></script>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/custom.css" rel="stylesheet" type="text/css">
+    <link href="assets/vendor/jquery-confirm/jquery-confirm.min.css" rel="stylesheet" type="text/css">
+
+    <script src='assets/js/jquery-3.4.1.min.js' type="text/javascript"></script>
+    <script src='assets/js/bootstrap.min.js' type="text/javascript"></script>
+    <script src='assets/vendor/jquery-confirm/jquery-confirm.min.js' type="text/javascript"></script>
+
+</head>
+
+<body>
+    <div class='container my-3' style="min-height: 100vh;">
+        <h5><a href="index.html" class='mr-4 text-danger'>← Back</a><span id="title"></span></h5>
+        <hr>
+        <div id="img" class='mb-4 text-center'></div>
+        <div id="content" class='text-justify'></div>
+    </div>
+    <!-- Footer -->
+    <footer class="py-3 bg-dark mt-5">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Minhajuddin Kasman AR 2020</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+
+    <script src="router.js"></script>
+    <script>
+        var router = new Router({
+            mode: 'hash',
+            root: '/showcase.html',
+            hooks: {
+                before: function (newPage) {
+                    //console.info('Before page loads hook', newPage);
+                }
+            },
+            page404: function (path) {
+                //console.log('"/' + path + '" Page not found');
+                location.replace("/404.html")
+            }
+        });
+
+        router
+            .add('', function () {
+                //console.log('Showcase page');
+                //document.getElementById('content').innerHTML = "Home Page";
+                location.replace('/')
+            })
+            .add('(:any)', function (slug) {
+                //console.log('Hello, ' + slug, this.state);
+                fetch('/works/works.json').then((response) => { return response.json() })
+                    .then(works => {
+                        let exists = false;
+                        works.forEach(work => {
+                            if (work.code === slug) {
+                                exists = true;
+                                document.title = work.title;
+                                document.querySelector('#img').innerHTML = '<img src="works/img/' + work.img + '" style="width:60%" class="shadow">';
+                                fetch('/works/post/' + work.code + '.html')
+                                    .then((response) => { return response.text() })
+                                    .then((html) => {
+                                        document.getElementById('content').innerHTML = html
+                                    })
+                            }
+                        })
+                        if (!exists) {
+                            window.location.replace('index.html');
+                        }
+                    })
+            })
+            .check()
+
+        window.router = router;
+    </script>
+</body>
+
+</html>
