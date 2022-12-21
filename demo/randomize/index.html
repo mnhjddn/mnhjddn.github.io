@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Randomization</title>
+
+    <link rel="stylesheet" href="../../assets/css/mnhjddn.css">
+</head>
+
+<body>
+
+    <div class="container py-5">
+
+        <div class="col-md-8 mx-auto">
+            <h4>Randomizer</h4>
+            <p>For those who hesitate to point at someone.</p>
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Please select a .txt file which containes the values to be
+                    randomized. (separated by new line):</label>
+                <input class="form-control" type="file" id="file">
+            </div>
+
+
+            <div id="pickPanel">
+                <div class="text-center mb-3">
+                    <button class="btn btn-primary" id="pickerBtn" onclick="pickOne()">Pick one!</button>
+                </div>
+                <div class="rounded p-3 border border-primary mb-4">
+                    <div class="text-center text-primary">
+                        <h3 class="mb-0" id="pickedValue">None's picked</h3>
+                    </div>
+                </div>
+                <div id="pickedList">
+
+                </div>
+                <div id="notPickedList">
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="../../vendor/boostrap-5.2.3/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+    <script defer>
+        var randomValues = [];
+        var pickedValues = [];
+
+        document.getElementById('file').onchange = function () {
+            randomValues = [];
+            pickedValues = [];
+            var file = this.files[0];
+            var reader = new FileReader();
+            reader.onload = function (progressEvent) {
+                const text = this.result;
+                var lines = text.split('\r\n');
+                for (var line = 0; line < lines.length; line++) {
+                    randomValues.push(lines[line]);
+                }
+                renderDisplay();
+            };
+            reader.readAsText(file);
+        };
+
+        function renderDisplay() {
+            if (document.getElementById('file').value) {
+                $('#pickPanel').attr('class', 'd-block');
+
+                /* Update picked list */
+                var newList = '<p class="fw-bold">Picked:</p><ol>';
+                for (var x = 0; x < pickedValues.length; x++) {
+                    newList += '<li>' + pickedValues[x] + '</li>';
+                }
+                newList += '</ol>'
+                $('#pickedList').html(newList);
+
+                /* Update picked list */
+                var newList = '<p class="fw-bold">Not Picked:</p><ol>';
+                for (var x = 0; x < randomValues.length; x++) {
+                    newList += '<li>' + randomValues[x] + '</li>';
+                }
+                newList += '</ol>'
+                $('#notPickedList').html(newList);
+
+            } else {
+                $('#pickPanel').attr('class', 'd-none');
+            }
+        }
+
+        renderDisplay();
+
+        function pickOne() {
+            if (randomValues.length == 1) {
+                var index = 0;
+                document.getElementById('pickedValue').textContent = randomValues[index];
+                pickedValues.push(randomValues[index]);
+                randomValues.splice(0, 1);
+                renderDisplay();
+            } else if (randomValues.length > 1) {
+                $('#pickerBtn').attr('disabled', true);
+                var index;
+                var randoming = setInterval(function () {
+                    index = Math.floor(Math.random() * randomValues.length);
+                    document.getElementById('pickedValue').textContent = randomValues[index];
+                }, 50);
+                setTimeout(function () {
+                    clearInterval(randoming);
+                    /* In case the index was changed before interval is cleared */
+                    document.getElementById('pickedValue').textContent = randomValues[index];
+                    pickedValues.push(randomValues[index]);
+                    randomValues.splice(index, 1);
+                    $('#pickerBtn').attr('disabled', false);
+                    renderDisplay();
+                }, 3000);
+            } else {
+                alert('No more values to random');
+            }
+        }
+    </script>
+</body>
+
+</html>
